@@ -1,24 +1,17 @@
-{% include 'recipes/partials/head.html' %}
-<body>
-    {% include 'recipes/partials/header.html' %}
-    {% include 'recipes/partials/search.html' %}
-<main class="main-content-container">
-        <div class="main-content main-content-list container">
+{% extends 'global/base.html' %}
+
+{% block title %} HOME {% endblock title %}
+
+{% block content %}
+
+    <div class="main-content main-content-list container">
+        {% for recipe in recipes %}
             {% include 'recipes/partials/recipes.html' %}
+        {% endfor %}
 
-
-                <footer class="recipe-footer">
-                    <a class="recipe-read-more button button-dark button-full-width" href="/recipes/3/">
-                        <i class="fas fa-eye"></i>
-                        <span>ver mais...</span>
-                    </a>
-                </footer>
-            </div>
-        </div>
+    </div>
+{% endblock content %}
 
 
 
-</main>
-{% include 'recipes/partials/footer.html' %}
-</body>
-</html>
+
